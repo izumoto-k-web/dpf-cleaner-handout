@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DPFクリーナーの提案・説明を立会人向けにまとめた資料">
+  <title>DPFクリーナー｜立会人向け提案・説明資料</title>
+  <style>
+    :root { --navy:#123047; --blue:#146c9c; --blue-pale:#eaf5fa; --ink:#1c2a33; --muted:#5d6b73; --line:#d8e0e4; --paper:#fff; --bg:#f3f6f7; --amber:#b45309; --amber-pale:#fff6e7; --red:#ae2e24; --red-pale:#fff0ef; --green:#28735a; --green-pale:#ebf7f1; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif; font-size:16px; line-height:1.75; }
+    .shell { max-width:1040px; margin:0 auto; background:var(--paper); box-shadow:0 2px 18px rgba(18,48,71,.10); }
+    header { padding:42px 52px 32px; color:#fff; background:linear-gradient(135deg,#123047,#146c9c); }
+    .eyebrow { margin:0 0 9px; color:#bce5f6; font-size:.88rem; font-weight:700; letter-spacing:.08em; }
+    h1 { margin:0; font-size:clamp(1.9rem,5vw,2.75rem); line-height:1.28; letter-spacing:.02em; }
+    .lead { max-width:700px; margin:15px 0 0; font-size:1.04rem; color:#e7f4fa; }
+    .mobile-break { display:none; }
+    nav { display:flex; gap:4px 18px; flex-wrap:wrap; padding:13px 52px; border-bottom:1px solid var(--line); background:#fbfdfe; font-size:.86rem; }
+    nav a { color:var(--navy); text-decoration:none; white-space:nowrap; }
+    nav a:hover { text-decoration:underline; }
+    main { padding:6px 52px 54px; }
+    section { padding:36px 0; border-bottom:1px solid var(--line); }
+    section:last-child { border-bottom:0; }
+    .section-no { display:block; margin-bottom:3px; color:var(--blue); font-size:.82rem; font-weight:700; letter-spacing:.08em; }
+    h2 { margin:0 0 16px; color:var(--navy); font-size:clamp(1.4rem,3.6vw,1.85rem); line-height:1.4; }
+    h3 { margin:24px 0 8px; color:var(--navy); font-size:1.08rem; }
+    p { margin:0 0 13px; }
+    .purpose { margin:20px 0 0; padding:20px 22px; border-left:5px solid var(--blue); background:var(--blue-pale); }
+    .purpose strong { color:var(--navy); }
+    .numbered { margin:18px 0 0; padding:0; counter-reset:item; list-style:none; }
+    .numbered li { position:relative; min-height:38px; margin:10px 0; padding:7px 0 7px 52px; }
+    .numbered li::before { position:absolute; left:0; top:4px; width:33px; height:33px; border-radius:50%; color:#fff; background:var(--blue); content:counter(item); counter-increment:item; font-weight:700; text-align:center; line-height:33px; }
+    .flow { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:18px 0; }
+    .flow-step { padding:16px; border-top:4px solid var(--blue); background:#f6fafc; }
+    .flow-step b { display:block; color:var(--navy); font-size:1.04rem; }
+    .flow-note { margin:19px 0 0; padding:13px 17px; border:1px solid #b8d7e5; border-radius:5px; background:#f5fbfd; color:var(--navy); font-weight:700; }
+    .criteria { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px; }
+    .decision-banner { margin:18px 0 4px; padding:17px 20px; border-left:5px solid var(--navy); background:var(--navy); color:#fff; font-size:1.06rem; font-weight:700; line-height:1.6; }
+    .decision-banner small { display:block; margin-top:3px; color:#cbe9f5; font-size:.88rem; font-weight:400; }
+    .criterion { padding:20px; border:1px solid var(--line); border-top:5px solid var(--blue); border-radius:4px; }
+    .criterion.light { border-top-color:var(--green); background:var(--green-pale); }
+    .criterion.candidate { border-top-color:var(--blue); background:var(--blue-pale); }
+    .criterion.high { border-top-color:var(--amber); background:var(--amber-pale); }
+    .criterion h3 { margin:0 0 13px; font-size:1.18rem; }
+    .range { margin:0 0 12px; color:var(--navy); font-size:1.02rem; font-weight:700; line-height:1.55; }
+    .range span { display:block; margin-top:4px; color:var(--muted); font-size:.88rem; font-weight:400; }
+    .criterion p { margin:0; font-size:.93rem; }
+    .product { padding:22px; border:1px solid #b8d7e5; background:#f5fbfd; }
+    .product-name { margin-bottom:12px; color:var(--navy); font-size:1.12rem; font-weight:700; }
+    .product blockquote, .talk blockquote { margin:15px 0 0; padding:0 0 0 18px; border-left:4px solid var(--blue); color:#30424d; }
+    .price { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin:20px 0 12px; padding:21px 22px; background:var(--navy); color:#fff; }
+    .price .amount { font-size:2rem; font-weight:700; line-height:1.2; }
+    .price .detail { font-size:.92rem; color:#d6eaf3; }
+    .plain-list { margin:8px 0 0; padding-left:1.3em; }
+    .plain-list li { margin:5px 0; }
+    .talk { margin:17px 0; padding:20px 22px; border:1px solid var(--line); border-left:5px solid var(--blue); }
+    .talk h3 { margin:0 0 6px; }
+    .talk.high { border-left-color:var(--amber); }
+    .talk-selection-note { margin:19px 0 0; padding:14px 18px; border:1px solid #b8d7e5; border-left:5px solid var(--blue); background:#f5fbfd; color:var(--navy); font-weight:700; }
+    .talk-groups { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:14px; }
+    .talk-group { padding:20px; border:1px solid var(--line); border-top:5px solid var(--blue); border-radius:4px; }
+    .talk-group.light { border-top-color:var(--green); background:var(--green-pale); }
+    .talk-group.candidate { border-top-color:var(--blue); background:var(--blue-pale); }
+    .talk-group.high { border-top-color:var(--amber); background:var(--amber-pale); }
+    .talk-label { margin:0 0 7px; color:var(--muted); font-size:.82rem; font-weight:700; }
+    .talk-group h3 { margin:0 0 12px; color:var(--navy); font-size:1.18rem; line-height:1.45; }
+    .talk-group blockquote { margin:0; padding:0 0 0 14px; border-left:4px solid currentColor; color:#30424d; font-size:.93rem; line-height:1.7; }
+    .talk-group.high blockquote + h4 { margin-top:18px; }
+    .talk-group h4 { margin:0 0 6px; color:#6a3907; font-size:.94rem; }
+    @media (max-width:840px) {
+      .talk-groups { grid-template-columns:1fr; gap:12px; }
+      .talk-group { padding:18px; }
+      .talk-group blockquote { font-size:1rem; line-height:1.75; }
+    }
+    .warning { padding:25px; border:2px solid #e5aaa6; background:var(--red-pale); }
+    .warning h2 { color:#8f251c; }
+    .warning .numbered li::before { background:var(--red); }
+    .handover { display:grid; gap:13px; margin:20px 0 0; }
+    .handover-item { display:grid; grid-template-columns:44px 1fr; gap:14px; align-items:start; padding:16px 18px; background:#f7fafb; border-left:4px solid var(--blue); }
+    .handover-item b { display:block; color:var(--navy); }
+    .handover-no { display:grid; place-items:center; width:33px; height:33px; border-radius:50%; background:var(--blue); color:#fff; font-weight:700; }
+    .confirm { margin-top:22px; padding:16px 18px; background:var(--amber-pale); border-left:5px solid var(--amber); color:#6a3907; font-weight:700; }
+    .sources { margin-top:18px; color:var(--muted); font-size:.85rem; }
+    .sources a { color:#075f8f; }
+    footer { padding:20px 52px; background:#eaf0f3; color:#58666e; font-size:.82rem; }
+    @media (max-width:720px) {
+      body { font-size:17px; line-height:1.7; }
+      .shell { box-shadow:none; }
+      header { padding:30px 20px 25px; }
+      .lead { font-size:.98rem; line-height:1.65; }
+      .mobile-break { display:inline; }
+      nav { position:sticky; top:0; z-index:10; flex-wrap:nowrap; gap:18px; overflow-x:auto; padding:11px 20px; box-shadow:0 2px 5px rgba(18,48,71,.10); white-space:nowrap; }
+      nav a { padding:2px 0; font-size:.9rem; }
+      main { padding:0 20px 36px; }
+      section { padding:29px 0; }
+      h2 { margin-bottom:13px; font-size:1.48rem; }
+      .section-no { font-size:.78rem; }
+      .flow, .criteria { grid-template-columns:1fr; }
+      .flow { gap:8px; }
+      .flow-step { padding:14px 15px; }
+      .criteria { gap:11px; }
+      .decision-banner { padding:16px 17px; font-size:1rem; }
+      .criterion { padding:17px; }
+      .product, .talk, .warning { padding:18px; }
+      .talk { margin:13px 0; }
+      .talk blockquote, .product blockquote { padding-left:14px; }
+      .handover-item { grid-template-columns:37px 1fr; padding:14px; }
+      .price { padding:18px; }
+      .price .amount { font-size:1.72rem; }
+      footer { padding:18px 20px; }
+    }
+    @media print { body { background:#fff; font-size:12px; } .shell { max-width:none; box-shadow:none; } nav { display:none; } header { padding:25px 35px; } main { padding:0 35px; } section { padding:21px 0; } .criteria { gap:8px; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <p class="eyebrow">立会人向け 提案・説明資料</p>
+      <h1>DPFクリーナー<br>提案とお客様への説明</h1>
+      <p class="lead">排ガス不適合車に対して、検査員の判断を確認してから、車両の状態に合った対応を説明するための資料です。</p>
+    </header>
+    <nav aria-label="ページ内メニュー">
+      <a href="#purpose">目的</a><a href="#product">DPFクリーナーとは</a><a href="#flow">提案フロー</a><a href="#criteria">早見表</a><a href="#price">商品・料金</a><a href="#talk">立会人トーク</a><a href="#caution">注意点</a><a href="#handover">提案前の確認</a>
+    </nav>
+    <main>
+      <section id="purpose">
+        <span class="section-no">01　この資料の目的</span>
+        <h2>数値だけで決めず、車両の状態を確認して説明する</h2>
+        <p>排ガス検査で規制値を超えた車両を<br class="mobile-break">対象に、立会人が検査員の判断を確認してから、<br class="mobile-break">お客様へ対応を正確に説明する資料です。<br class="mobile-break">測定値だけでDPFクリーナーを<br class="mobile-break">勧めず、車両の状態に応じた対応を<br class="mobile-break">案内します。</p>
+        <div class="purpose"><strong>導入の目的</strong><ol class="numbered"><li>再検預かりの粗利を向上させる</li><li>排ガス不適合車への提案基準と説明を統一する</li><li>立会人が検査員の判断をもとに、迷わず提案できるようにする</li></ol></div>
+      </section>
+
+      <section id="product">
+        <span class="section-no">02　DPFクリーナーとは</span>
+        <h2>DPF内部を清掃し、排ガス数値の改善を目指す作業</h2>
+        <div class="product"><p class="product-name">Wynn’s DPF &amp; GPF On-Car Cleaner（W29079）</p><p>DPFは、排気に含まれるすすを捕まえるフィルターです。汚れがたまって詰まると、清掃が必要になる場合があります。</p><p>この製品は、車両にDPFを取り付けたまま、薬剤をDPF内部へ送り込んで清掃するものです。当店では、清掃と強制燃焼を組み合わせて、排ガス数値の改善を目指します。</p><blockquote>排ガス不適合の原因がDPF以外にもある場合など、この作業だけでは十分に改善しないことがあります。</blockquote></div>
+      </section>
+
+      <section id="flow">
+        <span class="section-no">03　提案の全体フロー</span>
+        <h2>排ガス測定後、検査員の確認を経て対応を案内する</h2>
+        <div class="flow"><div class="flow-step"><b>1. 排ガス測定</b>車両ごとの規制値と、検査の最終判定値を確認します。</div><div class="flow-step"><b>2. 検査員が確認</b>DPFの搭載、車両状態、数値区分を確認し、対応を判断します。</div><div class="flow-step"><b>3. お客様へ案内</b>検査員から引き継いだ判断と理由をもとに説明します。</div></div>
+        <div class="flow-note">数値だけで提案を決めない。DPFを搭載していないディーゼル車は、このメニューの提案対象外です。</div>
+      </section>
+
+      <section id="criteria">
+        <span class="section-no">04　提案ボーダー早見表</span>
+        <h2>規制値と最終判定値を確認してから使う</h2>
+        <p>単位：m⁻¹。規制値以下の車両は、DPFクリーナーの提案対象外です。</p>
+        <div class="decision-banner">最終判定値の区分によって、最初に案内する対応が変わります。<small>車両状態を踏まえた最終判断は、検査員が行います。</small></div>
+        <div class="criteria">
+          <article class="criterion light"><h3>軽い上振れ</h3><p class="range">規制値 0.50：0.501～0.70<span>規制値 0.80：0.801～1.00</span></p><p>待合作業で、添加剤（アンチスモーク）などの軽い対応を案内します。</p></article>
+          <article class="criterion candidate"><h3>DPFクリーナー<br>提案候補</h3><p class="range">規制値 0.50：0.701～3.00<span>規制値 0.80：1.001～3.00</span></p><p>お預かりで、DPFクリーナー施工と強制燃焼を案内します。</p></article>
+          <article class="criterion high"><h3>高値・検査員判断</h3><p class="range">規制値 0.50：3.001以上<span>規制値 0.80：3.001以上</span></p><p>検査員の判断により、DPFクリーナー施工または追加診断を案内します。</p></article>
+        </div>
+        <p class="sources">「高値・検査員判断」は、単品施工を禁止する区分ではありません。検査員の判断によって対応を決めます。</p>
+      </section>
+
+      <section id="price">
+        <span class="section-no">05　商品内容・料金</span>
+        <h2>お預かり作業として案内する</h2>
+        <div class="price"><span class="amount">税込 36,300円</span><span class="detail">DPFクリーナー施工 ＋ 強制燃焼</span></div>
+        <ul class="plain-list"><li>DPFクリーナー施工と強制燃焼を含む、お預かり作業です。</li><li>検査・診断・再検査は、この料金に含みません。</li><li>燃料フィルターなどの追加整備が必要な場合は、内容と金額を別に案内し、ご了承後に作業します。</li></ul>
+      </section>
+
+      <section id="talk">
+        <span class="section-no">06　立会人トーク</span>
+        <h2>早見表の区分に合う説明を選んで使う</h2>
+        <div class="talk"><h3>基本説明</h3><blockquote>今回の排ガス検査では、お車の基準値を超える結果となりました。検査員が数値とお車の状態を確認しましたので、その結果をもとに、今回ご案内できる対応をご説明します。</blockquote></div>
+        <div class="talk-selection-note">以下は上から順に案内する手順ではありません。早見表で該当した区分のカードだけを選んで説明します。</div>
+        <div class="talk-groups">
+          <article class="talk-group light"><p class="talk-label">早見表：軽い上振れ</p><h3>軽い上振れの場合</h3><blockquote>今回の数値は基準を少し超えています。検査員の判断では、まずは添加剤（アンチスモーク）などの軽い対応から進められます。その結果を確認して、必要であれば次の対応をご相談します。</blockquote></article>
+          <article class="talk-group candidate"><p class="talk-label">早見表：DPFクリーナー提案候補</p><h3>DPFクリーナーを案内する場合</h3><blockquote>検査員が確認した結果、今回はDPFを清掃して排ガス数値の改善を目指す方法をご案内できます。このクリーナーを使ったこれまでの施工では、排ガスの数値が大きく下がった実績があります。今回のお車もDPF内部の汚れを清掃し、数値の改善を目指します。DPFクリーナーの施工と強制燃焼を行うお預かり作業で、料金は税込36,300円です。</blockquote></article>
+          <article class="talk-group high"><p class="talk-label">早見表：高値・検査員判断</p><h3>高値の場合</h3><h4>DPFクリーナー施工から試す場合</h4><blockquote>今回の数値は高めですが、検査員がお車の状態を確認し、まずはDPFを清掃して改善するかを見る方法をご案内できます。清掃で数値が改善した実績はありますが、今回のお車がこの作業だけで基準に入るとはお約束できません。結果によっては、燃料フィルターなど別の整備をご相談する場合があります。</blockquote><h4>追加診断を先に行う場合</h4><blockquote>今回は、DPFの清掃から始めてよいかを判断するために、ほかの部分も確認する必要があります。検査員が原因を調べたうえで、必要な作業と費用をご案内します。</blockquote></article>
+        </div>
+      </section>
+
+      <section id="caution" class="warning">
+        <span class="section-no">07　絶対に伝える注意点</span>
+        <h2>提案時には、次の3点をまとめて伝える</h2>
+        <ol class="numbered"><li>この施工で、必ず車検に適合するとは限りません。</li><li>施工後は再検査を行い、その結果で次の対応を判断します。</li><li>追加整備が必要な場合は、別にお見積もりし、ご了承をいただいてから進めます。</li></ol>
+      </section>
+
+      <section id="handover">
+        <span class="section-no">08　提案前の確認項目</span>
+        <h2>お客様へ提案する前に、この4項目を確認する</h2>
+        <div class="handover">
+          <div class="handover-item"><span class="handover-no">1</span><div><b>対象車両</b>DPFを搭載しているか。車両の規制値はいくつか。</div></div>
+          <div class="handover-item"><span class="handover-no">2</span><div><b>検査結果</b>最終判定値と、早見表のどの区分に当たるか。</div></div>
+          <div class="handover-item"><span class="handover-no">3</span><div><b>車両状態</b>警告灯や故障コード、燃料・吸気・排気系などに気になる点があるか。</div></div>
+          <div class="handover-item"><span class="handover-no">4</span><div><b>検査員の判断</b>何を提案するか、その理由。高値の場合は、単品施工と追加診断のどちらから始めるか。</div></div>
+        </div>
+        <div class="confirm">判断や理由を引き継げていない場合は、お客様へ提案する前に検査員へ確認してください。</div>
+      </section>
+      <p class="sources">製品情報の参照：<a href="https://www.wynns.eu/product/dpf-gpf-on-car-cleaner/" target="_blank" rel="noopener">Wynn’s公式製品ページ</a> ／ <a href="https://wynns2021.wpengine.com/products/TDS/W29079_TDS_EN.pdf" target="_blank" rel="noopener">公式技術資料</a></p>
+    </main>
+    <footer>作成日：2026-09-24　｜　料金の参照元：01_DPF清掃_料金・提案フロー.xlsx</footer>
+  </div>
+</body>
+</html>
